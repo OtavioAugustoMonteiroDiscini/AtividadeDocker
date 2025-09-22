@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Docker — Mini Guia Futurista</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main">
+      <div class="bg-el" aria-hidden></div>
+      <div class="gridlines" aria-hidden></div>
+
+      <div class="top">
+        <div class="brand">
+          <div class="logo">Dk</div>
+          <div>
+            <h1>Docker — Mini Guia</h1>
+           </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <nav class="nav" aria-label="Navegação de páginas">
+            <button class="dot active" data-page="0" title="O que é Docker?"></button>
+            <button class="dot" data-page="1" title="Por que empresas utilizam?"></button>
+            <button class="dot" data-page="2" title="Vantagens da conteinerização"></button>
+          </nav>
+          <div class="controls">
+            <button id="prev" class="btn" aria-label="Anterior">←</button>
+            <span id="pageNum">1 / 3</span>
+            <button id="next" class="btn" aria-label="Próximo">→</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <section class="panel pages" aria-live="polite">
+
+           <article class="page show" data-index="0">
+            <h2>O que é Docker?</h2>
+            <p class="lead">Docker é uma plataforma para empacotar, distribuir e rodar aplicações em containers — ambientes isolados, leves e portáteis.</p>
+            <div class="feature-list">
+              <div class="feature">
+                <div class="ico">📦</div>
+                <div>
+                  <strong>Containers:</strong>
+                  <p>Unidades que contêm tudo o que a aplicação precisa (código, runtime, bibliotecas).</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="ico">⚙️</div>
+                <div>
+                  <strong>Imagens:</strong>
+                  <p>Snapshots imutáveis que geram containers quando executadas.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="ico">🚀</div>
+                <div>
+                  <strong>Portabilidade:</strong>
+                  <p>Mesma imagem roda em laptops, servidores e nuvens com consistência.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PAGE 2 -->
+          <article class="page" data-index="1">
+            <h2>Por que empresas utilizam?</h2>
+            <p class="lead">Docker mudou a forma como software é entregue e operacionalizado. Empresas adotam por velocidade, consistência e escala.</p>
+            <div class="feature-list">
+              <div class="feature">
+                <div class="ico">⏱️</div>
+                <div>
+                  <strong>Entrega mais rápida:</strong>
+                  <p>CI/CD com imagens permite deploys automatizados e reprodutíveis.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="ico">🔁</div>
+                <div>
+                  <strong>Ambientes consistentes:</strong>
+                  <p>Elimina "na minha máquina funciona" — ambiente igual em dev/test/prod.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="ico">📈</div>
+                <div>
+                  <strong>Escalabilidade:</strong>
+                  <p>Containers iniciam rápido e facilitam orquestração (Kubernetes, Docker Swarm).</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="page" data-index="2">
+            <h2>Vantagens da conteinerização</h2>
+            <p class="lead">Conteinerizar traz benefícios técnicos e de equipe — da eficiência de recursos ao time-to-market.</p>
+            <div class="feature-list">
+              <div class="feature">
+                <div class="ico">💡</div>
+                <div>
+                  <strong>Isolamento:</strong>
+                  <p>Dependências isoladas reduzem conflitos e aumentam segurança.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="ico">💾</div>
+                <div>
+                  <strong>Reprodutibilidade:</strong>
+                  <p>Imagens versionadas garantem rollbacks e rastreabilidade.</p>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="ico">🌱</div>
+                <div>
+                  <strong>Uso eficiente de recursos:</strong>
+                  <p>Containers são mais leves que VMs, permitindo densidade maior em hosts.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </section>
+
+        <aside class="aside">
+          <div class="card-small">
+            <strong>Resumo visual</strong>
+            <p class="lead" style="margin-top:8px">Navegue pelas páginas para ver a explicação conceitual, motivos empresariais e as vantagens técnicas.</p>
+            <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+              <span class="chip">Docker Engine</span>
+              <span class="chip">Imagens</span>
+              <span class="chip">Containers</span>
+              <span class="chip">Orquestração</span>
+            </div>
+          </div>
+
+          <div class="card-small">
+            <strong>Exemplos rápidos</strong>
+            <div class="terminal" aria-hidden>
+              <div class="line">$ docker build -t minha-app:1.0 .</div>
+              <div class="line delay">$ docker run -d --name app -p 8080:80 minha-app:1.0</div>
+              <div class="line delay" style="animation-delay:1.2s">$ docker ps</div>
+            </div>
+          </div>
+
+          <div class="card-small" style="display:flex;flex-direction:column;gap:10px">
+            <strong>Atalhos</strong>
+            <div style="display:flex;gap:8px">
+              <button id="btn-learn" class="btn">Baixar PDF</button>
+              <button id="btn-share" class="btn">Compartilhar</button>
+            </div>
+            <small style="color:var(--muted)">Pressione ← e → no teclado para navegar.</small>
+          </div>
+        </aside>
+      </div>
+
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+  
+</body>
+</html>

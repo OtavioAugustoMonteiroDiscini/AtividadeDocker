@@ -1,0 +1,17 @@
+name: Testar build Docker
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Testar build Dockerfile
+        run: docker build -t teste-mini-site .
